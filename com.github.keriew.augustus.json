@@ -1,7 +1,7 @@
 {
     "app-id": "com.github.keriew.augustus",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "20.08",
+    "runtime-version": "21.08",
     "sdk": "org.freedesktop.Sdk",
     "finish-args": [
         "--filesystem=home:ro",
@@ -9,7 +9,7 @@
         "--socket=wayland",
         "--socket=fallback-x11",
         "--socket=pulseaudio"
-     ],
+    ],
     "command": "augustus",
     "modules": [
         {
@@ -19,16 +19,12 @@
                 {
                     "type": "git",
                     "url": "https://github.com/Keriew/augustus.git",
-                    "tag": "v3.0.1",
-                    "commit": "8531945391bcf1172a262333a5cdf1918b5f6ce3",
+                    "tag": "v3.1.0",
+                    "commit": "e49ad7d1c02ba7d3917754a2b06b2065754e3384",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
                     }
-                },
-                {
-                    "type": "patch",
-                    "path": "fix-and-update-appstream.patch"
                 }
             ]
         }
