@@ -19,8 +19,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/Keriew/augustus.git",
-                    "tag": "v3.1.0",
-                    "commit": "e49ad7d1c02ba7d3917754a2b06b2065754e3384",
+                    "tag": "v3.2.0",
+                    "commit": "d2c1994bd51a139e48c6459724c6a23f0f0ecd46",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
