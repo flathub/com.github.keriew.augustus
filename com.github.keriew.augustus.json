@@ -6,6 +6,7 @@
     "finish-args": [
         "--filesystem=home:ro",
         "--share=ipc",
+        "--device=dri",
         "--socket=wayland",
         "--socket=fallback-x11",
         "--socket=pulseaudio"
