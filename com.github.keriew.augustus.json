@@ -4,7 +4,6 @@
     "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
     "finish-args": [
-        "--filesystem=home:ro",
         "--share=ipc",
         "--device=dri",
         "--socket=wayland",
