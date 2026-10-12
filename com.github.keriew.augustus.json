@@ -1,32 +1,49 @@
 {
-    "app-id": "com.github.keriew.augustus",
-    "runtime": "org.freedesktop.Platform",
-    "runtime-version": "25.08",
-    "sdk": "org.freedesktop.Sdk",
-    "finish-args": [
-        "--share=ipc",
-        "--device=dri",
-        "--socket=wayland",
-        "--socket=fallback-x11",
-        "--socket=pulseaudio"
-    ],
-    "command": "augustus",
-    "modules": [
+  "app-id": "com.github.keriew.augustus",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "26.08",
+  "sdk": "org.freedesktop.Sdk",
+  "finish-args": [
+    "--share=ipc",
+    "--device=dri",
+    "--socket=wayland",
+    "--socket=fallback-x11",
+    "--socket=pulseaudio",
+    "--env=LD_LIBRARY_PATH=/app/lib64"
+  ],
+  "command": "augustus",
+  "modules": [
+    {
+    "name": "SDL2_mixer",
+    "buildsystem": "simple",
+    "build-commands": [
+    "cmake -S . -B build -G Ninja -DCMAKE_INSTALL_PREFIX=/app -DSDL2MIXER_VENDORED=ON -DSDL2MIXER_SAMPLES=OFF -DSDL2MIXER_TESTS=OFF",
+    "cmake --build build --parallel",
+    "cmake --install build"
+],
+    "sources": [
         {
-            "name": "augustus",
-            "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/Keriew/augustus.git",
-                    "tag": "v4.0.0",
-                    "commit": "3edf0f889c977a63117c555d4ef3d0891d797664",
-                    "x-checker-data": {
-                        "type": "git",
-                        "tag-pattern": "^v([\\d.]+)$"
-                    }
-                }
-            ]
+            "type": "git",
+            "url": "https://github.com/libsdl-org/SDL_mixer.git",
+            "tag": "release-2.8.2"
         }
     ]
+},
+    {
+      "name": "augustus",
+      "buildsystem": "cmake-ninja",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/Keriew/augustus.git",
+          "tag": "v4.0.0",
+          "commit": "3edf0f889c977a63117c555d4ef3d0891d797664",
+          "x-checker-data": {
+            "type": "git",
+            "tag-pattern": "^v([\\d.]+)$"
+          }
+        }
+      ]
+    }
+  ]
 }
